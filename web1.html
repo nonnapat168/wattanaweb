@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บไซต์ใหม่ - ธีมใหม่</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://www.toptal.com/designers/subtlepatterns/patterns/diagonal_stripes.png') repeat;
+            color: #f4f4f4;
+        }
+
+        header {
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            background-color: #ff6f61;
+            color: white;
+        }
+
+        .content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #ff6f61;
+        }
+
+        .card {
+            background-color: #2f2f3e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            display: inline-block;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container, .music-container, .pets-container, .sports-container, .food-container, .movie-container {
+            background-color: #2f2f3e;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+            text-align: center;
+        }
+
+        .pets-container img, .sports-container img, .food-container img, .movie-container img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ยินดีต้อนรับสู่เว็บไซต์ของ wattana!</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="toggleMusic()">favorite song</a>
+    <a href="#" onclick="toggleForm()">form</a>
+    <a href="#" onclick="togglePets()">pets</a>
+    <a href="#" onclick="toggleSports()">favorite sport</a>
+    <a href="#" onclick="toggleFood()">favorite food</a> 
+    <a href="#" onclick="toggleMovie()">favorite movie</a> 
+</nav>
+
+
+<!-- ฟอร์มสำหรับกรอกข้อมูล -->
+<div id="formSection" class="form-container">
+    <h2>กรอกข้อมูลของคุณ</h2>
+    <form action="#">
+        <label for="name">ชื่อ:</label>
+        <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อของคุณ" required>
+
+        <label for="email">อีเมล:</label>
+        <input type="email" id="email" name="email" placeholder="กรุณากรอกอีเมลของคุณ" required>
+
+        <button type="submit">ส่งข้อมูล</button>
+    </form>
+</div>
+
+<!-- เพลงที่ฝังจาก YouTube -->
+<div id="musicSection" class="music-container">
+    <h2>เพลงโปรดของคุณ</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/QHx1-CM1nvk?si=vK9POod2vMi-CAGA" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- รูปภาพสัตว์เลี้ยง -->
+<div id="petsSection" class="pets-container">
+    <h2>สัตว์เลี้ยงของคุณ</h2>
+    <img src="https://www.verdantplanet.org/animalfiles/uploads/2023/media-626-652573e573fbb.jpg" alt="สัตว์เลี้ยง 1">
+    <img src="https://i.pinimg.com/736x/4f/dc/a7/4fdca75fc9d0bd15ca1da6f001f64b55.jpg" alt="สัตว์เลี้ยง 2">
+</div>
+
+<!-- รูปภาพกีฬาที่ชื่นชอบ -->
+<div id="sportsSection" class="sports-container">
+    <h2>กีฬาที่ชื่นชอบ</h2>
+    <img src="https://www.infoquest.co.th/wp-content/uploads/2020/09/20200916_canva_football-1024x576.png.webp" alt="ฟุตบอล">
+    <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5LJDKtULJzu0nXYkxHEnG0W5YeyFERAMm2X3aBWWE2f3TjStBgB.webp" alt="กีฬา 2">
+</div>
+
+<!-- รูปภาพอาหารที่ชื่นชอบ -->
+<div id="foodSection" class="food-container">
+    <h2>อาหารที่ชื่นชอบ</h2>
+    <img src="https://homeyselect.co/wp-content/uploads/2024/04/%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%81%E0%B9%88.jpg" alt="ข้าวมันไก่">
+    <img src="https://images.deliveryhero.io/image/fd-th/LH/m6id-listing.jpg" alt="อาหารจานโปรด">
+</div>
+
+<!-- รูปภาพภาพยนตร์ที่ชื่นชอบ -->
+<div id="movieSection" class="movie-container">
+    <h2>ภาพยนตร์ที่ชื่นชอบ</h2>
+    <img src="https://www.thestreetratchada.com/upload/contents/1732699133Oct%202%20(%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%87%20%E0%B8%9C%E0%B8%B5)%20(2).jpg" alt="หนังผี">
+    <img src="https://cms.dmpcdn.com/moviearticle/2023/11/30/7a265aa0-8edb-11ee-99ef-237fd0c7b421_webp_original.webp" alt="หนังแอ็คชั่น">
+</div>
+
+
+<script>
+    function toggleForm() {
+        var formSection = document.getElementById("formSection");
+        formSection.style.display = formSection.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleMusic() {
+        var musicSection = document.getElementById("musicSection");
+        musicSection.style.display = musicSection.style.display === "none" ? "block" : "none";
+    }
+
+    function togglePets() {
+        var petsSection = document.getElementById("petsSection");
+        petsSection.style.display = petsSection.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleSports() {
+        var sportsSection = document.getElementById("sportsSection");
+        sportsSection.style.display = sportsSection.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleFood() {
+        var foodSection = document.getElementById("foodSection");
+        foodSection.style.display = foodSection.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleMovie() {
+        var movieSection = document.getElementById("movieSection");
+        movieSection.style.display = movieSection.style.display === "none" ? "block" : "none";
+    }
+</script>
+
+</body>
+</html>
